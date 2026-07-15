@@ -25,8 +25,8 @@ Requires Node.js >= 22.12.0 (see `.nvmrc`).
 
 ## License
 
-- **Source code**: MIT — see [LICENSE-CODE](LICENSE-CODE)
-- **Content**: CC BY-NC-SA 4.0 — see [LICENSE-CONTENT](LICENSE-CONTENT)
+- **Code**: [MIT](LICENSE)
+- **Content**: [CC BY-NC-SA 4.0](LICENSE-CONTENT)
 
 ---
 
