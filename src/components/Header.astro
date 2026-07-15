@@ -17,13 +17,6 @@ const { site, features } = config;
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
 
-const otherLocale = locale === "zh" ? "en" : "zh";
-const otherLabel = locale === "zh" ? "EN" : "中";
-const otherUrl =
-  otherLocale === "en"
-    ? getRelativeLocaleUrl("en", stripLocale(Astro.url.pathname, locale))
-    : stripLocale(Astro.url.pathname, locale); // zh has no prefix
-
 const relativePath = stripBase(Astro.url.pathname);
 const pathWithoutTrailingSlash =
   relativePath.endsWith("/") && relativePath !== "/"
@@ -111,14 +104,8 @@ const isActive = (path: string) => {
             {t.nav.projects}
           </a>
         </li>
-        <li>
-          <a
-            href={otherUrl}
-            class="font-mono text-sm"
-            aria-label="Switch language"
-          >
-            {otherLabel}
-          </a>
+        <li class="text-muted-foreground flex items-center gap-1 text-sm">
+          <span class="text-accent font-semibold">中</span>
         </li>
         {
           features.search !== false && (
