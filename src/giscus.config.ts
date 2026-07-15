@@ -10,8 +10,8 @@
  * Leave repo empty to disable comments.
  */
 export const giscusConfig = {
-  repo: "" as string, // e.g. "Totoro-jam/personal-website"
-  repoId: "" as string, // e.g. "R_kgDO..."
-  category: "Announcements" as string, // Discussion category name
-  categoryId: "" as string, // e.g. "DIC_kwDO..."
+  repo: "Totoro-jam/personal-website",
+  repoId: "R_kgDOTY6kLg",
+  category: "Announcements",
+  categoryId: "DIC_kwDOTY6kLs4DBOqi",
 };
