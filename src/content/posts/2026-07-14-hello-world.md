@@ -4,7 +4,7 @@ description: "这个博客的搭建过程和技术选型：AstroPaper + Cloudfla
 pubDatetime: 2026-07-14
 modDatetime: 2026-07-14
 tags: ["astro", "cloudflare", "blog"]
-draft: true
+draft: false
 ---
 
 为什么又搭了一个博客？因为需要一个干净、可控、零维护成本的地方写东西。
