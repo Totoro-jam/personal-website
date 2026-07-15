@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 
 import IconEdit from "@/assets/icons/IconEdit.svg";
 import config from "@/config";
-import { useTranslations } from "@/i18n";
+import { ui } from "@/ui-strings";
 
 type Props = {
   hideEditPost?: CollectionEntry<"posts">["data"]["hideEditPost"];
@@ -17,7 +17,7 @@ const editPost = config.features.editPost;
 const href = editPost.enabled ? `${editPost.url}${post.filePath}` : "";
 const showEditPost = editPost.enabled && !hideEditPost && href.trim() !== "";
 
-const t = useTranslations(Astro.currentLocale);
+const t = ui;
 ---
 
 {

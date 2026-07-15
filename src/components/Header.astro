@@ -1,17 +1,18 @@
 ---
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
+import IconRss from "@/assets/icons/IconRss.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconX from "@/assets/icons/IconX.svg";
 import config from "@/config";
-import { useTranslations } from "@/i18n";
+import { ui } from "@/ui-strings";
 
 import LinkButton from "./LinkButton.astro";
 
 const { site, features } = config;
 
-const t = useTranslations();
+const t = ui;
 
 const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
 
@@ -101,6 +102,19 @@ const isActive = (path: string) => {
             </li>
           )
         }
+        <li class="flex items-center justify-center">
+          <a
+            href={"/rss.xml"}
+            class="focus-outline relative size-8"
+            title="RSS"
+            aria-label="RSS"
+          >
+            <IconRss
+              class="absolute top-1/2 left-1/2 size-5 -translate-x-1/2 -translate-y-1/2"
+            />
+            <span class="sr-only">RSS</span>
+          </a>
+        </li>
         {
           features.lightAndDarkMode && (
             <li class="flex items-center justify-center">
