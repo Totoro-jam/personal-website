@@ -2,9 +2,9 @@ export interface UIStrings {
   nav: {
     home: string;
     posts: string;
-    ideas: string;
+    notes: string;
+    sparks: string;
     projects: string;
-    about: string;
     search: string;
   };
   post: {
@@ -39,8 +39,11 @@ export interface UIStrings {
     postsTitle: string;
     postsDesc: string;
 
-    ideasTitle: string;
-    ideasDesc: string;
+    notesTitle: string;
+    notesDesc: string;
+
+    sparksTitle: string;
+    sparksDesc: string;
 
     projectsTitle: string;
     projectsDesc: string;

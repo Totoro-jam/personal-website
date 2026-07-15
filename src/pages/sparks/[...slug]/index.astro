@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Datetime from "@/components/Datetime.astro";
+import config from "@/config";
+
+export async function getStaticPaths() {
+  const s = await getCollection("sparks");
+  return s.map(item => ({ params: { slug: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { title, description, pubDatetime } = item.data;
+const { Content } = await render(item);
+---
+
+<Layout title={`${title} | ${config.site.title}`} description={description}>
+  <Header />
+  <main id="main-content" class="app-layout mt-8" data-pagefind-body>
+    <h1 class="text-accent text-2xl font-bold sm:text-3xl">{title}</h1>
+    <div class="my-2"><Datetime pubDatetime={pubDatetime} size="sm" /></div>
+    <article class="app-prose max-w-app mt-8 w-full"><Content /></article>
+  </main>
+  <Footer />
+</Layout>

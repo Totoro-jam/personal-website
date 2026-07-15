@@ -34,8 +34,8 @@ const pages = defineCollection({
   }),
 });
 
-const ideas = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/ideas" }),
+const notes = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/notes" }),
   schema: z.object({
     author: z.string().default(config.site.author),
     pubDatetime: z.date(),
@@ -43,7 +43,18 @@ const ideas = defineCollection({
     description: z.string().optional(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).default([]),
-    lang: z.string().optional(),
+  }),
+});
+
+const sparks = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/sparks" }),
+  schema: z.object({
+    author: z.string().default(config.site.author),
+    pubDatetime: z.date(),
+    title: z.string(),
+    description: z.string().optional(),
+    draft: z.boolean().optional(),
+    tags: z.array(z.string()).default([]),
   }),
 });
 
@@ -61,4 +72,4 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { posts, pages, ideas, projects };
+export const collections = { posts, pages, notes, sparks, projects };

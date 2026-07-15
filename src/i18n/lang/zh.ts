@@ -2,12 +2,12 @@ import type { UIStrings } from "../types";
 
 export default {
   nav: {
-    home: "首页",
-    posts: "航迹",
-    ideas: "浪花",
-    projects: "舰队",
-    about: "锚点",
-    search: "搜索",
+    home: "Home",
+    posts: "Blog",
+    notes: "Notes",
+    sparks: "Sparks",
+    projects: "Projects",
+    search: "Search",
   },
   post: {
     publishedAt: "发布于",
@@ -38,16 +38,19 @@ export default {
     allRightsReserved: "保留所有权利。",
   },
   pages: {
-    postsTitle: "航迹",
+    postsTitle: "Blog",
     postsDesc: "技术深度文章和长文记录。",
 
-    ideasTitle: "浪花",
-    ideasDesc: "灵感碎片、奇思妙想、头脑风暴。",
+    notesTitle: "Notes",
+    notesDesc: "学习笔记、参考资料、知识碎片。",
 
-    projectsTitle: "舰队",
-    projectsDesc: "我打造和出航的项目。",
+    sparksTitle: "Sparks",
+    sparksDesc: "灵感碎片、奇思妙想、头脑风暴。",
 
-    searchTitle: "搜索",
+    projectsTitle: "Projects",
+    projectsDesc: "我打造的项目。",
+
+    searchTitle: "Search",
     searchDesc: "搜索文章...",
   },
   a11y: {

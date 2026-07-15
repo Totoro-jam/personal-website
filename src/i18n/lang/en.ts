@@ -4,9 +4,9 @@ export default {
   nav: {
     home: "Home",
     posts: "Blog",
-    ideas: "Sparks",
-    projects: "Fleet",
-    about: "About",
+    notes: "Notes",
+    sparks: "Sparks",
+    projects: "Projects",
     search: "Search",
   },
   post: {
@@ -38,14 +38,17 @@ export default {
     allRightsReserved: "All rights reserved.",
   },
   pages: {
-    postsTitle: "Tracks",
+    postsTitle: "Blog",
     postsDesc: "Technical deep-dives and long-form writing.",
 
-    ideasTitle: "Sparks",
-    ideasDesc: "Fleeting thoughts, brainstorms, and shower ideas.",
+    notesTitle: "Notes",
+    notesDesc: "Learning notes, references, and knowledge snippets.",
 
-    projectsTitle: "Fleet",
-    projectsDesc: "Things I've built and sailed.",
+    sparksTitle: "Sparks",
+    sparksDesc: "Fleeting thoughts, brainstorms, and shower ideas.",
+
+    projectsTitle: "Projects",
+    projectsDesc: "Things I've built.",
 
     searchTitle: "Search",
     searchDesc: "Search any article ...",
