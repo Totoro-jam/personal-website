@@ -7,7 +7,7 @@ export default defineAstroPaperConfig({
     description: "A late wind is still a wind — long voyage.",
     author: "Totoro",
     ogImage: "default-og.jpg",
-    lang: "en",
+    lang: "zh",
     timezone: "Asia/Shanghai",
     dir: "ltr",
   },
@@ -19,7 +19,7 @@ export default defineAstroPaperConfig({
   features: {
     lightAndDarkMode: true,
     dynamicOgImage: false,
-    showArchives: true,
+    showArchives: false,
     showBackButton: true,
     editPost: {
       enabled: false,

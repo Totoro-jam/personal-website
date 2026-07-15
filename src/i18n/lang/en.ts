@@ -3,10 +3,10 @@ import type { UIStrings } from "../types";
 export default {
   nav: {
     home: "Home",
-    posts: "Posts",
-    tags: "Tags",
-    about: "About",
-    archives: "Archives",
+    posts: "Tracks",
+    ideas: "Sparks",
+    projects: "Fleet",
+    about: "Anchor",
     search: "Search",
   },
   post: {
@@ -38,17 +38,14 @@ export default {
     allRightsReserved: "All rights reserved.",
   },
   pages: {
-    tagTitle: "Tag",
-    tagDesc: "All the articles with the tag",
+    postsTitle: "Tracks",
+    postsDesc: "Technical deep-dives and long-form writing.",
 
-    tagsTitle: "Tags",
-    tagsDesc: "All the tags used in posts.",
+    ideasTitle: "Sparks",
+    ideasDesc: "Fleeting thoughts, brainstorms, and shower ideas.",
 
-    postsTitle: "Posts",
-    postsDesc: "All the articles I've posted.",
-
-    archivesTitle: "Archives",
-    archivesDesc: "All the articles I've archived.",
+    projectsTitle: "Fleet",
+    projectsDesc: "Things I've built and sailed.",
 
     searchTitle: "Search",
     searchDesc: "Search any article ...",

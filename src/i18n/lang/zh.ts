@@ -3,10 +3,10 @@ import type { UIStrings } from "../types";
 export default {
   nav: {
     home: "首页",
-    posts: "文章",
-    tags: "标签",
-    about: "关于",
-    archives: "归档",
+    posts: "航迹",
+    ideas: "浪花",
+    projects: "舰队",
+    about: "锚点",
     search: "搜索",
   },
   post: {
@@ -38,17 +38,14 @@ export default {
     allRightsReserved: "保留所有权利。",
   },
   pages: {
-    tagTitle: "标签",
-    tagDesc: "该标签下的所有文章",
+    postsTitle: "航迹",
+    postsDesc: "技术深度文章和长文记录。",
 
-    tagsTitle: "所有标签",
-    tagsDesc: "文章中使用过的所有标签",
+    ideasTitle: "浪花",
+    ideasDesc: "灵感碎片、奇思妙想、头脑风暴。",
 
-    postsTitle: "文章",
-    postsDesc: "所有已发布的文章",
-
-    archivesTitle: "归档",
-    archivesDesc: "按时间归档的所有文章",
+    projectsTitle: "舰队",
+    projectsDesc: "我打造和出航的项目。",
 
     searchTitle: "搜索",
     searchDesc: "搜索文章...",

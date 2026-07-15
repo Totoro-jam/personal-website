@@ -34,4 +34,31 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { posts, pages };
+const ideas = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/ideas" }),
+  schema: z.object({
+    author: z.string().default(config.site.author),
+    pubDatetime: z.date(),
+    title: z.string(),
+    description: z.string().optional(),
+    draft: z.boolean().optional(),
+    tags: z.array(z.string()).default([]),
+    lang: z.string().optional(),
+  }),
+});
+
+const projects = defineCollection({
+  loader: glob({ pattern: "*.json", base: "./src/content/projects" }),
+  schema: z.object({
+    name: z.string(),
+    description: z.string(),
+    descriptionEn: z.string().optional(),
+    url: z.string().optional(),
+    github: z.string().optional(),
+    icon: z.string().default("carbon:cube"),
+    tags: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+  }),
+});
+
+export const collections = { posts, pages, ideas, projects };
