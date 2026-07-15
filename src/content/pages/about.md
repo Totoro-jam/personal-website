@@ -7,7 +7,7 @@ Hi, I'm **Totoro** 👋
 
 Welcome aboard the Voyage Log — my corner of the web where I write about technology, share projects, and document the journey.
 
-> *"A late wind is still a wind — long voyage."*
+> _"A late wind is still a wind — long voyage."_
 
 ## What to expect
 

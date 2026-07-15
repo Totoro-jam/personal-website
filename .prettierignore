@@ -1,0 +1,2 @@
+# Astro inline script edge case (prettier-plugin-astro bug)
+src/components/Giscus.astro

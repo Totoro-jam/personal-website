@@ -10,12 +10,14 @@ AstroPaper theming works through CSS custom properties on `:root` and `[data-the
 ## Step 1: Read Current State
 
 Before changing anything:
+
 ```bash
 # Understand the current CSS variable system
 cat src/styles/global.css
 ```
 
 AstroPaper's key variables:
+
 - `--background` / `--foreground` — page background/text
 - `--accent` — links, buttons, active states
 - `--muted` / `--border` — subtle backgrounds and borders
@@ -28,10 +30,11 @@ AstroPaper's key variables:
 Edit `src/styles/global.css`:
 
 ```css
-:root, html[data-theme="light"] {
+:root,
+html[data-theme="light"] {
   --background: #fdfdfd;
   --foreground: #282728;
-  --accent: #YOUR_COLOR;    /* ← change this */
+  --accent: #YOUR_COLOR; /* ← change this */
   --muted: #e6e6e6;
   --border: #ece9e9;
 }
@@ -39,7 +42,7 @@ Edit `src/styles/global.css`:
 html[data-theme="dark"] {
   --background: #212737;
   --foreground: #eaedf3;
-  --accent: #YOUR_COLOR;    /* ← change this too */
+  --accent: #YOUR_COLOR; /* ← change this too */
   --muted: #343f60bf;
   --border: #ab4b08;
 }
@@ -48,6 +51,7 @@ html[data-theme="dark"] {
 ### Component Override
 
 To replace a theme component:
+
 1. Find the component in `src/components/`
 2. Create a file with the same name to shadow it
 3. Use the original as reference but customize as needed
@@ -57,8 +61,11 @@ Never modify theme components directly in `node_modules/`.
 ### Layout Adjustments
 
 `max-w-app` in `global.css` controls content width:
+
 ```css
-.max-w-app { max-width: 768px; }  /* default, change as needed */
+.max-w-app {
+  max-width: 768px;
+} /* default, change as needed */
 ```
 
 ## Step 3: Verify Both Modes

@@ -1,7 +1,9 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { BLOG_PATH } from "@/content.config";
-import { slugifyStr } from "./slugify";
+
 import config from "@/config";
+import { BLOG_PATH } from "@/content.config";
+
+import { slugifyStr } from "./slugify";
 
 function getPostPathSegments(filePath: string | undefined): string[] {
   return (

@@ -28,11 +28,11 @@ export default defineAstroPaperConfig({
   },
   socials: [
     { name: "github", url: "https://github.com/Totoro-jam" },
-    { name: "mail",   url: "mailto:yourmail@gmail.com" },
+    { name: "mail", url: "mailto:yourmail@gmail.com" },
   ],
   shareLinks: [
-    { name: "x",        url: "https://x.com/intent/post?url=" },
+    { name: "x", url: "https://x.com/intent/post?url=" },
     { name: "telegram", url: "https://t.me/share/url?url=" },
-    { name: "mail",     url: "mailto:?subject=See%20this%20post&body=" },
+    { name: "mail", url: "mailto:?subject=See%20this%20post&body=" },
   ],
 });

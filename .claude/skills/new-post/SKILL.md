@@ -12,6 +12,7 @@ You are creating a new blog post for Totoro's Voyage Log. Follow this workflow â
 ### 1. Gather Information
 
 Ask the user (if not already provided):
+
 - **Title**: Post title (will also generate slug)
 - **Topic**: What the post is about
 - **Tags**: 2-4 relevant tags (check existing tags in `src/content/posts/` for consistency)
@@ -62,5 +63,6 @@ pnpm build # Verify zero errors
 ```
 
 After verification:
+
 - [ ] Set `draft: false` if ready to publish
 - [ ] Commit with message: `post: add <title>`

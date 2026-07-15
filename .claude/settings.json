@@ -17,11 +17,7 @@
       "WebSearch",
       "WebFetch"
     ],
-    "ask": [
-      "Bash(git push*)",
-      "Bash(rm -rf *)",
-      "Bash(git reset --hard*)"
-    ]
+    "ask": ["Bash(git push*)", "Bash(rm -rf *)", "Bash(git reset --hard*)"]
   },
   "hooks": {
     "PreToolUse": [

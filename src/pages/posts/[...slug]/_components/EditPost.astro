@@ -1,8 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
+
 import IconEdit from "@/assets/icons/IconEdit.svg";
-import { useTranslations } from "@/i18n";
 import config from "@/config";
+import { useTranslations } from "@/i18n";
 
 type Props = {
   hideEditPost?: CollectionEntry<"posts">["data"]["hideEditPost"];

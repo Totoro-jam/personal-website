@@ -1,8 +1,9 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { stripBase, stripLocale } from "@/utils/withBase";
-import { useTranslations } from "@/i18n";
+
 import config from "@/config";
+import { useTranslations } from "@/i18n";
+import { stripBase, stripLocale } from "@/utils/withBase";
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
@@ -41,7 +42,6 @@ if (breadcrumbList[0] === "posts") {
     `${t.nav.posts} (${t.pagination.page.toLowerCase()} ${breadcrumbList[1] || 1})`
   );
 }
-
 ---
 
 <nav class="app-layout mt-8 mb-1" aria-label="breadcrumb">

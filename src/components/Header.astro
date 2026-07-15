@@ -1,14 +1,16 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
-import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
-import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
+import IconSearch from "@/assets/icons/IconSearch.svg";
+import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconX from "@/assets/icons/IconX.svg";
-import LinkButton from "./LinkButton.astro";
-import { stripBase, stripLocale } from "@/utils/withBase";
-import { useTranslations } from "@/i18n";
 import config from "@/config";
+import { useTranslations } from "@/i18n";
+import { stripBase, stripLocale } from "@/utils/withBase";
+
+import LinkButton from "./LinkButton.astro";
 
 const { site, features } = config;
 
@@ -17,9 +19,10 @@ const t = useTranslations(locale);
 
 const otherLocale = locale === "zh" ? "en" : "zh";
 const otherLabel = locale === "zh" ? "EN" : "中";
-const otherUrl = otherLocale === "en"
-  ? getRelativeLocaleUrl("en", stripLocale(Astro.url.pathname, locale))
-  : stripLocale(Astro.url.pathname, locale); // zh has no prefix
+const otherUrl =
+  otherLocale === "en"
+    ? getRelativeLocaleUrl("en", stripLocale(Astro.url.pathname, locale))
+    : stripLocale(Astro.url.pathname, locale); // zh has no prefix
 
 const relativePath = stripBase(Astro.url.pathname);
 const pathWithoutTrailingSlash =
@@ -109,7 +112,11 @@ const isActive = (path: string) => {
           </a>
         </li>
         <li>
-          <a href={otherUrl} class="font-mono text-sm" aria-label="Switch language">
+          <a
+            href={otherUrl}
+            class="font-mono text-sm"
+            aria-label="Switch language"
+          >
             {otherLabel}
           </a>
         </li>

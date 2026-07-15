@@ -1,6 +1,6 @@
 # Totoro's Voyage Log ⛵️
 
-> *"A late wind is still a wind — long voyage."*
+> _"A late wind is still a wind — long voyage."_
 
 Personal website and technical blog. Built with [AstroPaper](https://github.com/satnaing/astro-paper) + [Cloudflare Pages](https://pages.cloudflare.com/).
 

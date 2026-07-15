@@ -36,6 +36,7 @@ Scan all posts for common issues:
 - [ ] No placeholder text ("lorem ipsum", "TODO", "TBD") in published posts
 
 Run this check:
+
 ```bash
 grep -r "draft: true" src/content/posts/ && echo "WARNING: Draft posts found!" || echo "No drafts"
 grep -r "TODO\|TBD\|lorem ipsum" src/content/ --include="*.md" && echo "WARNING: Placeholder text found!" || echo "No placeholders"
@@ -44,6 +45,7 @@ grep -r "TODO\|TBD\|lorem ipsum" src/content/ --include="*.md" && echo "WARNING:
 ### 4. Link Verification
 
 For any new or modified external links:
+
 ```bash
 # Check each new external link returns 200
 curl -sI <url> | head -1
@@ -64,5 +66,6 @@ pnpm preview
 ### 6. Final Gate
 
 If all above pass:
+
 - [ ] Ready to `git push`
 - [ ] Cloudflare Pages will auto-deploy from `main` branch

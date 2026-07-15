@@ -7,7 +7,9 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-app: "Geist Sans", "Inter", "SF Pro", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, sans-serif;
+  --font-app:
+    "Geist Sans", "Inter", "SF Pro", -apple-system, blinkmacsystemfont,
+    "Segoe UI", roboto, sans-serif;
 }
 
 /* Light theme values */

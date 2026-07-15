@@ -1,10 +1,12 @@
 ---
-import { ClientRouter } from "astro:transitions";
+import "@/styles/global.css";
+
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { ClientRouter } from "astro:transitions";
+
+import config from "@/config";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
-import config from "@/config";
-import "@/styles/global.css";
 
 type Props = {
   title?: string;

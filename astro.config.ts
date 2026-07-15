@@ -1,22 +1,19 @@
-import {
-  defineConfig,
-  envField,
-  svgoOptimizer,
-} from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { unified } from "@astrojs/markdown-remark";
-import remarkToc from "remark-toc";
-import remarkCollapse from "remark-collapse";
-import rehypeCallouts from "rehype-callouts";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
-import { transformerFileName } from "./src/utils/transformers/fileName";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, envField, svgoOptimizer } from "astro/config";
+import rehypeCallouts from "rehype-callouts";
+import remarkCollapse from "remark-collapse";
+import remarkToc from "remark-toc";
+
 import config from "./astro-paper.config";
+import { transformerFileName } from "./src/utils/transformers/fileName";
 
 export default defineConfig({
   site: config.site.url,

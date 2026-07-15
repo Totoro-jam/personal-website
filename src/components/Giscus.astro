@@ -9,73 +9,76 @@ const isConfigured = repo && repoId && categoryId;
   isConfigured && (
     <section class="giscus mt-12 border-t pt-8">
       <h2 class="mb-4 text-xl font-semibold">Comments</h2>
-      <div class="giscus-frame"></div>
-    </section>
-  )
-}
+      <div
+        class="giscus-frame"
+        data-giscus-repo={repo}
+        data-giscus-repo-id={repoId}
+        data-giscus-category={category}
+        data-giscus-category-id={categoryId}
+      ></div>
+      <script is:inline>
+        (function () {
+          const el = document.querySelector(".giscus-frame");
+          if (!el) return;
 
-{
-  isConfigured && (
-    <script is:inline define:vars={{ repo, repoId, category, categoryId }}>
-      {
-        // Determine initial theme from AstroPaper's data-theme on <html>
-        const initTheme = () => {
-          const stored = localStorage.getItem("theme");
-          if (stored) return stored === "dark" ? "dark" : "light";
-          return window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-        };
+          const repo = el.dataset.giscusRepo;
+          const repoId = el.dataset.giscusRepoId;
+          const category = el.dataset.giscusCategory;
+          const categoryId = el.dataset.giscusCategoryId;
+          if (!repo || !repoId || !categoryId) return;
 
-        const script = document.createElement("script");
-        script.src = "https://giscus.app/client.js";
-        script.setAttribute("data-repo", repo);
-        script.setAttribute("data-repo-id", repoId);
-        script.setAttribute("data-category", category);
-        script.setAttribute("data-category-id", categoryId);
-        script.setAttribute("data-mapping", "pathname");
-        script.setAttribute("data-strict", "0");
-        script.setAttribute("data-reactions-enabled", "1");
-        script.setAttribute("data-emit-metadata", "0");
-        script.setAttribute("data-input-position", "bottom");
-        script.setAttribute("data-theme", initTheme());
-        script.setAttribute("data-lang", "en");
-        script.setAttribute("data-loading", "lazy");
-        script.crossOrigin = "anonymous";
-        script.async = true;
-
-        const container = document.querySelector(".giscus-frame");
-        container?.appendChild(script);
-
-        // Sync theme with AstroPaper's toggle
-        const sendTheme = () => {
-          const theme =
-            document.documentElement.getAttribute("data-theme") === "dark" ||
-            document.documentElement.classList.contains("dark")
+          const initTheme = () => {
+            const stored = localStorage.getItem("theme");
+            if (stored) return stored === "dark" ? "dark" : "light";
+            return window.matchMedia("(prefers-color-scheme: dark)").matches
               ? "dark"
               : "light";
+          };
 
-          const iframe = document.querySelector<HTMLIFrameElement>(
-            "iframe.giscus-frame"
-          );
-          iframe?.contentWindow?.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          );
-        };
+          const script = document.createElement("script");
+          script.src = "https://giscus.app/client.js";
+          script.setAttribute("data-repo", repo);
+          script.setAttribute("data-repo-id", repoId);
+          script.setAttribute("data-category", category);
+          script.setAttribute("data-category-id", categoryId);
+          script.setAttribute("data-mapping", "pathname");
+          script.setAttribute("data-reactions-enabled", "1");
+          script.setAttribute("data-emit-metadata", "0");
+          script.setAttribute("data-input-position", "bottom");
+          script.setAttribute("data-theme", initTheme());
+          script.setAttribute("data-lang", "en");
+          script.setAttribute("data-loading", "lazy");
+          script.crossOrigin = "anonymous";
+          script.async = true;
 
-        // Watch for theme changes on <html>
-        const observer = new MutationObserver(() => sendTheme());
-        observer.observe(document.documentElement, {
-          attributes: true,
-          attributeFilter: ["data-theme", "class"],
-        });
+          el.appendChild(script);
 
-        // Also sync when iframe loads
-        script.addEventListener("load", () => {
-          setTimeout(sendTheme, 500);
-        });
-      }
-    </script>
+          const sendTheme = () => {
+            const theme =
+              document.documentElement.getAttribute("data-theme") === "dark" ||
+              document.documentElement.classList.contains("dark")
+                ? "dark"
+                : "light";
+            const iframe = document.querySelector("iframe.giscus-frame");
+            if (iframe) {
+              iframe.contentWindow?.postMessage(
+                { giscus: { setConfig: { theme } } },
+                "https://giscus.app"
+              );
+            }
+          };
+
+          const observer = new MutationObserver(() => sendTheme());
+          observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["data-theme", "class"],
+          });
+
+          script.addEventListener("load", () => {
+            setTimeout(sendTheme, 500);
+          });
+        })();
+      </script>
+    </section>
   )
 }
