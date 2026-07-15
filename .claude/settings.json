@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dev*)",
+      "Bash(pnpm build*)",
+      "Bash(pnpm preview*)",
+      "Bash(pnpm lint*)",
+      "Bash(pnpm install*)",
+      "Bash(pnpm add*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(rm -rf *)",
+      "Bash(git reset --hard*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'CMD=\"$CLAUDE_TOOL_INPUT\"; if echo \"$CMD\" | grep -qE \"git push --force|git reset --hard|git clean -fdx|rm -rf .\"; then echo \"BLOCKED: Destructive operation.\" >&2; exit 2; fi'"
+          }
+        ]
+      }
+    ]
+  }
+}
