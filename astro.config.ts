@@ -27,9 +27,6 @@ export default defineConfig({
   i18n: {
     locales: ["zh"],
     defaultLocale: "zh",
-    routing: {
-      prefixDefaultLocale: false,
-    },
   },
   markdown: {
     processor: unified({
